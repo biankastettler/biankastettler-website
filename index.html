@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bianka Stettler — Be a Voice, not an Echo</title>
+<meta name="description" content="Bianka Stettler — Social Media, Kampagnen & investigative Arbeiten. Laut. Stark. Lautstark.">
+<link rel="icon" href="bilder/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F5F2;
+    --ink:#161310;
+    --signal:#A100F5;
+    --signal-dark:#7C00C8;
+    --signal-bright:#C24DFF;
+    --grad:linear-gradient(120deg,#8300FF,#DD00FF);
+    --line:rgba(22,19,16,.14);
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--signal);color:#fff}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+
+  .display{font-family:'Anton',sans-serif;font-weight:400;letter-spacing:.01em;text-transform:uppercase;line-height:.95}
+  .label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  /* ===== NAV ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1.5px solid var(--ink);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+  .nav-logo img{height:42px;width:auto}
+  .nav-links{display:flex;gap:6px;align-items:center;list-style:none}
+  .nav-links>li{position:relative}
+  .nav-links a,.nav-links button{
+    font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;
+    padding:10px 12px;background:none;border:none;cursor:pointer;color:var(--ink);
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .nav-links a:hover,.nav-links button:hover{color:var(--signal)}
+  .caret{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+  /* Dropdown */
+  .dropdown{
+    position:absolute;top:calc(100% + 10px);left:0;min-width:300px;
+    background:#fff;color:var(--ink);border:1.5px solid var(--ink);
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .18s,transform .18s,visibility .18s;
+    box-shadow:6px 6px 0 var(--signal);
+  }
+  .nav-links li:hover .dropdown,.nav-links li:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-links li:hover .caret{transform:rotate(225deg) translateY(-2px)}
+  .dropdown a{display:block;padding:13px 18px;font-size:.74rem;color:var(--ink);border-bottom:1px solid rgba(22,19,16,.1);transition:color .12s}
+  .dropdown a:last-child{border-bottom:none}
+  .dropdown a:hover{color:var(--signal)}
+  .nav-cta{background:var(--grad)!important;color:#fff!important;font-weight:500}
+  .nav-cta:hover{opacity:.88}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0}
+
+  /* ===== HERO ===== */
+  .hero{padding:64px 0 56px;border-bottom:1.5px solid var(--ink);position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.6rem,6.5vw,5.6rem)}
+  .hero h1 .voice{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .echo-line{display:flex;align-items:baseline;gap:.3em;flex-wrap:wrap}
+  .echo{opacity:.45}
+  .echo+.echo{opacity:.22}
+  .echo+.echo+.echo{opacity:.09}
+  .hero-sub{max-width:560px;margin-top:28px;font-size:1.08rem}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;align-items:center}
+  .btn{
+    display:inline-block;font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+    padding:15px 26px;border:1.5px solid var(--ink);transition:all .15s;
+  }
+  .btn-primary{background:var(--grad);border-color:transparent;color:#fff}
+  .btn-primary:hover{opacity:.88}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper)}
+  .socials{display:flex;gap:4px;flex-wrap:wrap;margin-top:30px}
+  .socials a{
+    font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
+    padding:7px 12px;border:1px solid var(--line);border-radius:999px;transition:all .15s;
+  }
+  .socials a:hover{border-color:var(--signal);color:var(--signal)}
+  .portrait-frame{position:relative;max-width:400px;justify-self:end}
+  .portrait-frame img{border:1.5px solid var(--ink);box-shadow:12px 12px 0 var(--signal);width:100%}
+  .portrait-frame .label{
+    position:absolute;bottom:-14px;left:-10px;background:var(--ink);color:#fff;
+    padding:8px 14px;letter-spacing:.16em;
+  }
+
+  /* ===== TICKER ===== */
+  .ticker{background:var(--ink);color:var(--paper);overflow:hidden;border-bottom:1.5px solid var(--ink)}
+  .ticker-track{display:flex;gap:0;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content}
+  .ticker span{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:12px 0}
+  .ticker em{color:var(--signal-bright);font-style:normal;padding:0 18px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){
+    .ticker-track{animation:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* ===== SECTIONS ===== */
+  section{padding:80px 0}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:42px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(1.9rem,4.5vw,3.2rem)}
+  .sec-head .label{color:var(--signal)}
+
+  /* Aktuell */
+  .aktuell{border-bottom:1.5px solid var(--ink)}
+  .news-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .news-card{
+    border:1.5px solid var(--ink);padding:30px;position:relative;background:#fff;
+    transition:transform .15s,box-shadow .15s;
+  }
+  .news-card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--signal)}
+  .news-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:10px;flex-wrap:wrap}
+  .stamp{
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+    border:1.5px solid var(--signal);color:var(--signal);padding:4px 10px;
+  }
+  .news-card h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.5rem;line-height:1.1;margin-bottom:14px}
+  .news-card p{font-size:.95rem;color:rgba(22,19,16,.78)}
+  .news-card .more{display:inline-block;margin-top:20px;font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);font-weight:500}
+  .news-card .more:hover{text-decoration:underline}
+
+  /* Expertise */
+  .expertise{border-bottom:1.5px solid var(--ink);background:#fff}
+  .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1.5px solid var(--ink)}
+  .exp-cell{padding:36px 28px;border-right:1.5px solid var(--ink)}
+  .exp-cell:last-child{border-right:none}
+  .exp-cell .label{display:block;margin-bottom:16px;color:var(--signal)}
+  .exp-cell h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.3rem;margin-bottom:14px}
+  .exp-cell p{font-size:.93rem;color:rgba(22,19,16,.78)}
+
+  /* Projekte */
+  .projekte{border-bottom:1.5px solid var(--ink)}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .proj-card{
+    border:1.5px solid var(--ink);background:#fff;display:flex;flex-direction:column;
+    transition:transform .15s,box-shadow .15s;
+  }
+  .proj-card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--ink)}
+  .proj-thumb{
+    aspect-ratio:16/10;overflow:hidden;border-bottom:1.5px solid var(--ink);background:#ECEAE5;
+  }
+  .proj-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+  .proj-card:hover .proj-thumb img{transform:scale(1.04)}
+  .proj-body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .proj-body .label{color:var(--signal)}
+  .proj-body h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:1.15rem;line-height:1.15}
+  .proj-body p{font-size:.88rem;color:rgba(22,19,16,.75)}
+
+  /* CTA */
+  .cta{text-align:center;padding:110px 0}
+  .cta h2{font-size:clamp(2.4rem,7vw,5.5rem);max-width:900px;margin:0 auto 18px}
+  .cta h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cta p{max-width:520px;margin:0 auto 40px;color:rgba(22,19,16,.75)}
+
+  /* Footer */
+  footer{background:var(--ink);color:var(--paper);padding:60px 0 40px}
+  .foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:48px}
+  .foot-logo img{height:64px;width:auto;margin-bottom:18px}
+  .foot-col p,.foot-col a{font-size:.85rem;color:rgba(246,245,242,.7);display:block;line-height:2}
+  .foot-col a:hover{color:var(--signal-bright)}
+  .foot-col .label{color:var(--signal-bright);margin-bottom:10px;display:block}
+  .foot-bottom{border-top:1px solid rgba(246,245,242,.15);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .foot-bottom span{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(246,245,242,.5)}
+
+  :is(a,button):focus-visible{outline:2.5px solid var(--signal);outline-offset:3px}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:900px){
+    .news-grid,.proj-grid{grid-template-columns:1fr}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .portrait-frame{justify-self:start;max-width:320px}
+    .exp-grid{grid-template-columns:1fr}
+    .exp-cell{border-right:none;border-bottom:1.5px solid var(--ink)}
+    .exp-cell:last-child{border-bottom:none}
+    .nav-logo img{height:34px}
+    .nav-links{
+      display:none;position:absolute;top:68px;left:0;right:0;
+      background:var(--paper);flex-direction:column;align-items:stretch;
+      border-bottom:1.5px solid var(--ink);padding:8px 0 16px;
+    }
+    .nav-links.open{display:flex}
+    .nav-links a,.nav-links button{padding:12px 24px;width:100%;text-align:left;justify-content:space-between}
+    .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;display:none;margin:0 24px}
+    .nav-links li.open .dropdown{display:block}
+    .burger{display:block}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="nav-logo" href="#" aria-label="Bianka Stettler — Startseite">
+      <img src="bilder/logo-farbig.png" alt="Bianka Stettler — Laut. Stark. Lautstark.">
+    </a>
+    <button class="burger" aria-label="Menü öffnen" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html#aktuell">Aktuell</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li>
+        <button type="button" onclick="this.parentElement.classList.toggle('open')">Projekte <span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="e-id-referendum.html">E-ID Referendum 2025</a>
+          <a href="swissmedic-coop-vitality.html">Swissmedic / Coop-Vitality</a>
+          <a href="https://massvoll.swiss/kandidat/bianka-stettler/" target="_blank" rel="noopener">Grossratswahlen Bern 2026</a>
+          <a href="erfolgsstory-trainsane.html">Erfolgsstory TRAINSANE</a>
+          <a href="grafikprojekte.html">Grafikprojekte</a>
+        </div>
+      </li>
+      <li><a class="nav-cta" href="#kontakt">Kontakt</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="label" style="color:var(--signal)">Social Media · Kampagnen · Investigativ</span>
+      <h1 class="display" style="margin-top:18px">
+        Be a <span class="voice">Voice,</span><br>
+        <span class="echo-line">not an Echo <span class="echo">Echo</span> <span class="echo">Echo</span> <span class="echo">Echo</span></span>
+      </h1>
+      <p class="hero-sub">Ich bin Bianka Stettler — Social-Media-Spezialistin mit lauter Meinung, starkem Tempo und Spass an klaren Botschaften. Ich entwickle Kampagnen, die auffallen, polarisieren und Menschen bewegen.</p>
+      <div class="hero-meta">
+        <a class="btn btn-primary" href="#kontakt">Projekt starten</a>
+        <a class="btn btn-ghost" href="#projekte">Arbeiten ansehen</a>
+      </div>
+      <div class="socials">
+        <a href="https://x.com/AliceWonders911" target="_blank" rel="noopener">X</a>
+        <a href="https://www.linkedin.com/in/bianka-stettler/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/bibibunny2/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@bianka.stettler" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.facebook.com/bianka.marton/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="portrait-frame">
+      <img src="bilder/portrait.jpg" alt="Bianka Stettler">
+      <span class="label">Laut. Stark. Lautstark.</span>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Laut + Stark = Lautstark<em>✦</em>Strategie<em>✦</em>Content<em>✦</em>Kampagnen<em>✦</em>Investigativ<em>✦</em>Wirkung statt Follower<em>✦</em>Laut + Stark = Lautstark<em>✦</em>Strategie<em>✦</em>Content<em>✦</em>Kampagnen<em>✦</em>Investigativ<em>✦</em>Wirkung statt Follower<em>✦</em></span>
+  </div>
+</div>
+
+<section class="aktuell" id="aktuell">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">01 — Aktuell</span>
+      <h2 class="display">Was gerade läuft.</h2>
+    </div>
+    <div class="news-grid">
+      <article class="news-card">
+        <div class="news-top">
+          <span class="stamp">Update · 21.04.2026</span>
+          <span class="label" style="color:rgba(22,19,16,.4)">E-ID</span>
+        </div>
+        <h3>E-ID Endgame: Der Showdown in Lausanne</h3>
+        <p>Das Bundesgericht berät öffentlich über die E-ID-Abstimmung. Dank meiner Beschwerde und weiteren Eingaben kann das Gericht eine erneute Abstimmung anordnen — der entscheidende Wendepunkt im Kampf gegen die E-ID.</p>
+        <a class="more" href="e-id-referendum.html">Mehr erfahren →</a>
+      </article>
+      <article class="news-card">
+        <div class="news-top">
+          <span class="stamp">Recherche</span>
+          <span class="label" style="color:rgba(22,19,16,.4)">Investigativ</span>
+        </div>
+        <h3>Swissmedic / Coop-Vitality: Die ganze Story</h3>
+        <p>Alle Dokumente, Hintergründe und neuen Fakten zum Fall Coop Vitality und der Swissmedic-Busse — vom offenen Brief zur offiziellen Strafanzeige.</p>
+        <a class="more" href="swissmedic-coop-vitality.html">Zum Dossier →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="expertise" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">02 — Expertise</span>
+      <h2 class="display">Drei Stärken, eine Haltung.</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-cell">
+        <span class="label">Social Media & Kampagnen</span>
+        <h3>Wirkung statt Follower</h3>
+        <p>Von Strategie bis Content: Ich entwickle Kampagnen, die auffallen, polarisieren und Menschen bewegen — digital und kreativ. Statt Follower zu zählen, schaffe ich echte Wirkung.</p>
+      </div>
+      <div class="exp-cell">
+        <span class="label">Mein Ansatz</span>
+        <h3>Growth-Tool mit Power</h3>
+        <p>Social Media ist kein Deko-Kanal. Ich verbinde Strategie mit Intuition, Struktur mit Kreativität — für smarte Lösungen, starke Marken und Ergebnisse, die echt performen.</p>
+      </div>
+      <div class="exp-cell">
+        <span class="label">Investigative Arbeiten</span>
+        <h3>Weiter, wo andere aufhören</h3>
+        <p>Mit Hartnäckigkeit, juristischem Verständnis und sauber dokumentierten Belegen decke ich Missstände auf — Narrative prüfen, Widersprüche sichtbar machen, faktenbasiert Druck erzeugen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projekte" id="projekte">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">03 — Projekte</span>
+      <h2 class="display">Ausgewählte Arbeiten.</h2>
+    </div>
+    <div class="proj-grid">
+      <a class="proj-card" href="e-id-referendum.html">
+        <div class="proj-thumb"><img src="bilder/eid-projekt.jpg" alt="Kampagnengrafik: NEIN zum E-ID-Gesetz" loading="lazy"></div>
+        <div class="proj-body">
+          <span class="label">Kampagne · 2025</span>
+          <h3>E-ID Referendum</h3>
+          <p>Digitale & analoge Kommunikationsleitung und Kampagnenführung des erfolgreichen E-ID Referendums.</p>
+        </div>
+      </a>
+      <a class="proj-card" href="swissmedic-coop-vitality.html">
+        <div class="proj-thumb"><img src="bilder/swissmedic-karte.jpg" alt="Covid-Impfwerbung in der Coop Vitality Apotheke" loading="lazy"></div>
+        <div class="proj-body">
+          <span class="label">Investigativ · laufend</span>
+          <h3>Swissmedic / Coop-Vitality</h3>
+          <p>Aufdeckung irreführender mRNA-Werbung bei Coop Vitality — vom offenen Brief zur offiziellen Strafanzeige.</p>
+        </div>
+      </a>
+      <a class="proj-card" href="https://massvoll.swiss/kandidat/bianka-stettler/" target="_blank" rel="noopener">
+        <div class="proj-thumb"><img src="bilder/grw-plakat.jpg" alt="Wahlplakat Grossratswahlen Bern 2026: Freiheit und Vernunft" loading="lazy"></div>
+        <div class="proj-body">
+          <span class="label">Politik · 2026</span>
+          <h3>Grossratswahlen Bern</h3>
+          <p>Kandidatur für den Grossen Rat — für Freiheit, Bürgerrechte und gesunden Menschenverstand.</p>
+        </div>
+      </a>
+      <a class="proj-card" href="erfolgsstory-trainsane.html">
+        <div class="proj-thumb"><img src="bilder/trainsane.jpg" alt="TRAINSANE Event mit Dennis James" loading="lazy"></div>
+        <div class="proj-body">
+          <span class="label">Brand · E-Commerce</span>
+          <h3>TRAINSANE</h3>
+          <p>Wie der Brand TRAINSANE eine Community belebte und sich international etablierte — inkl. Gründung der Schweizer Eigenmarke.</p>
+        </div>
+      </a>
+      <a class="proj-card" href="grafikprojekte.html">
+        <div class="proj-thumb"><img src="bilder/grafikprojekte.jpg" alt="Flyer-Designs" loading="lazy"></div>
+        <div class="proj-body">
+          <span class="label">Design</span>
+          <h3>Grafikprojekte</h3>
+          <p>Partyflyer (Print & Online), Broschüren, Sales-Flyer, Poster und mehr.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="kontakt">
+  <div class="wrap">
+    <h2 class="display">Bereit für Kampagnen mit <em>Haltung?</em></h2>
+    <p>Dann lass uns was starten, das knallt — und bleibt.</p>
+    <a class="btn btn-primary" href="mailto:hallo@biankastettler.ch">E-Mail senden →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-logo">
+        <img src="bilder/logo-weiss.png" alt="Bianka Stettler — Laut. Stark. Lautstark.">
+        <p>Stettler Web Solutions<br>Oberfeldstrasse 3a, 3067 Boll</p>
+      </div>
+      <div class="foot-col">
+        <span class="label">Navigation</span>
+        <a href="#aktuell">Aktuell</a>
+        <a href="#services">Services</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="foot-col">
+        <span class="label">Social</span>
+        <a href="https://x.com/AliceWonders911" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://www.linkedin.com/in/bianka-stettler/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/bibibunny2/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@bianka.stettler" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Bianka Stettler, 2026</span>
+      <span>Be a Voice, not an Echo.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
