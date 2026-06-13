@@ -102,7 +102,20 @@
     </button>
     <ul class="nav-links">
       <li><a href="index.html#aktuell">Aktuell</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li>
+        <button type="button" onclick="this.parentElement.classList.toggle('open')">Services <span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="services.html#social-media">Social Media & Kampagnen</a>
+          <a href="services.html#kampagnen">Projektmanagement</a>
+          <a href="services.html#branding">Branding & Grafik</a>
+          <a href="services.html#events">Events & Guerilla Marketing</a>
+          <a href="services.html#ecommerce">Produktentwicklung & E-Commerce</a>
+          <a href="services.html#app-development">App Development</a>
+          <a href="services.html#webdevelopment">Web Development</a>
+          <a href="services.html#coaching">Fitness Coaching</a>
+          <a href="services.html#preise">Preise</a>
+        </div>
+      </li>
       <li>
         <button type="button" onclick="this.parentElement.classList.toggle('open')">Projekte <span class="caret"></span></button>
         <div class="dropdown">
@@ -185,7 +198,10 @@
   <div class="wrap">
     <h2 class="display">Lust auf Projekte mit <em>Wirkung?</em></h2>
     <p>Ich bin offen für spannende Aufträge in Digital, Social Media, Branding, E-Commerce und mehr — let's talk.</p>
-    <a class="btn btn-primary" href="mailto:hallo@biankastettler.ch">E-Mail senden →</a>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary" href="mailto:bianka.stettler@gmail.com">E-Mail senden →</a>
+      <a class="btn btn-ghost" href="tel:+41799362300">+41 79 936 23 00</a>
+    </div>
   </div>
 </section>
 <footer>
@@ -194,6 +210,8 @@
       <div class="foot-col foot-logo">
         <img src="bilder/logo-weiss.png" alt="Bianka Stettler — Laut. Stark. Lautstark.">
         <p>Stettler Web Solutions<br>Oberfeldstrasse 3a, 3067 Boll</p>
+        <a href="tel:+41799362300">+41 79 936 23 00</a>
+        <a href="mailto:bianka.stettler@gmail.com">bianka.stettler@gmail.com</a>
       </div>
       <div class="foot-col">
         <span class="label">Navigation</span>
@@ -208,6 +226,8 @@
         <a href="https://www.linkedin.com/in/bianka-stettler/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://www.instagram.com/bibibunny2/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.tiktok.com/@bianka.stettler" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.facebook.com/bianka.marton/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/@biankastettler" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
     <div class="foot-bottom">

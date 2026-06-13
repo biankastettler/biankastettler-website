@@ -109,7 +109,20 @@
     </button>
     <ul class="nav-links">
       <li><a href="index.html#aktuell">Aktuell</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li>
+        <button type="button" onclick="this.parentElement.classList.toggle('open')">Services <span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="services.html#social-media">Social Media & Kampagnen</a>
+          <a href="services.html#kampagnen">Projektmanagement</a>
+          <a href="services.html#branding">Branding & Grafik</a>
+          <a href="services.html#events">Events & Guerilla Marketing</a>
+          <a href="services.html#ecommerce">Produktentwicklung & E-Commerce</a>
+          <a href="services.html#app-development">App Development</a>
+          <a href="services.html#webdevelopment">Web Development</a>
+          <a href="services.html#coaching">Fitness Coaching</a>
+          <a href="services.html#preise">Preise</a>
+        </div>
+      </li>
       <li>
         <button type="button" onclick="this.parentElement.classList.toggle('open')">Projekte <span class="caret"></span></button>
         <div class="dropdown">
@@ -133,7 +146,7 @@
   </div>
 </section>
 
-<section class="bordered">
+<section class="bordered" id="social-media">
   <div class="wrap prose">
     <span class="sec-label label">01 — Digital & Social Media</span>
     <h2 class="display">Wirkung statt Follower.</h2>
@@ -146,7 +159,7 @@
     </ul>
   </div>
 </section>
-<section class="bordered">
+<section class="bordered" id="kampagnen">
   <div class="wrap prose">
     <span class="sec-label label">02 — Projektmanagement & Kampagnenführung</span>
     <h2 class="display">Von A bis Z.</h2>
@@ -158,7 +171,7 @@
     </ul>
   </div>
 </section>
-<section class="bordered">
+<section class="bordered" id="branding">
   <div class="wrap prose">
     <span class="sec-label label">03 — Branding & Grafik</span>
     <h2 class="display">Marken, die man erkennt.</h2>
@@ -171,7 +184,7 @@
     <a class="btn btn-ghost" href="grafikprojekte.html">Grafikprojekte ansehen →</a>
   </div>
 </section>
-<section class="bordered">
+<section class="bordered" id="events">
   <div class="wrap prose">
     <span class="sec-label label">04 — Events, Guerilla Marketing & Community</span>
     <h2 class="display">Aktivierung, die ankommt.</h2>
@@ -184,25 +197,25 @@
     </ul>
   </div>
 </section>
-<section class="bordered">
+<section class="bordered" id="ecommerce">
   <div class="wrap prose">
     <span class="sec-label label">05 — Produktentwicklung & E-Commerce</span>
     <h2 class="display">Vom Konzept zum Verkauf.</h2>
     <ul>
       <li>Ganzheitliche Produktentwicklung und -management — von Konzeption über Produkteinführungen (z.B. Nahrungsergänzungen, Kleiderlinie) bis zu Promotionen</li>
-      <li>Entwicklung, Launch und Pflege von Online-Marketingkampagnen für die Eigenmarken Trainsane® (trainsane.ch) und ClearSmile (clear-smile.ch)</li>
+      <li>Entwicklung, Launch und Pflege von Online-Marketingkampagnen für die Eigenmarken Trainsane® (<a href="https://trainsane.ch" target="_blank" rel="noopener" style="color:var(--signal);text-decoration:underline">trainsane.ch</a>) und ClearSmile (<a href="https://clear-smile.ch" target="_blank" rel="noopener" style="color:var(--signal);text-decoration:underline">clear-smile.ch</a>)</li>
       <li>Betreuung des Webshops mit über 400 Produkten, inkl. Optimierung von Produkteseiten und Nutzererlebnis</li>
       <li>Planung und Umsetzung crossmedialer Promotionen über Social Media, Newsletter und Landingpages</li>
       <li>Kontinuierliches Monitoring von Verkäufen, Conversion Rates und Kampagnenergebnissen</li>
     </ul>
   </div>
 </section>
-<section class="bordered">
+<section class="bordered" id="app-development">
   <div class="wrap prose">
     <span class="sec-label label">06 — App Development & Management</span>
     <h2 class="display">Digitale Tools mit Substanz.</h2>
     <ul>
-      <li>Entwicklung der App „MyTrainsane" mit Virtuagym für Gym-Mitglieder & Online-Kunden</li>
+      <li>Entwicklung der <a href="https://apps.apple.com/ch/app/mytrainsane-app/id6778756989" target="_blank" rel="noopener" style="color:var(--signal);text-decoration:underline">MyTRAINSANE App</a> mit Virtuagym für Gym-Mitglieder & Online-Kunden</li>
       <li>Verwaltung & Entwicklung von Ernährungs- und Trainingsplänen sowie Buchungen für über 2'000 Klienten</li>
       <li>Konzeption & Launch digitaler Tools</li>
       <li>Testing, Optimierung & Tracking von Nutzerverhalten</li>
@@ -210,20 +223,29 @@
     </ul>
   </div>
 </section>
-<section class="bordered" id="gold-trading">
+<section class="bordered" id="webdevelopment">
   <div class="wrap prose">
-    <span class="sec-label label">07 — Institutional-Grade Gold-Trading</span>
-    <h2 class="display">KI-gestützte Gold-Strategie.</h2>
-    <p>Profitieren Sie von meiner CFD-Trading-Strategie auf Gold: eine hochstabile, KI-gestützte Trading-Strategie auf Darwinex Zero, spezialisiert auf Gold — mit präzisem Risikomanagement auf Hedgefonds-Niveau und einem modularen Framework.</p>
+    <span class="sec-label label">07 — Web Development & Website-Bau</span>
+    <h2 class="display">Websites, die wirken.</h2>
+    <p>Ich baue moderne, schnelle Websites — vom eleganten One-Pager bis zur komplexen Plattform. Kein starrer Baukasten, sondern massgeschneiderter Code: volle gestalterische Freiheit, beste Ladezeiten und tiefe laufende Kosten. Genau diese Website ist das beste Beispiel dafür.</p>
     <ul>
-      <li><strong>Top-Performance:</strong> Bis zu 30 % Jahresrendite, mit über 20 % Gewinn (Juni–August 2025) und Gold-Status auf Darwinex Zero</li>
-      <li><strong>Algorithmisches Trading:</strong> Emotionsloses Trading mit KI-optimiertem Framework (über 20 Module)</li>
-      <li><strong>Gold-Fokus:</strong> Hohe Renditen durch Gold-CFDs, ergänzt durch Forex- und Bitcoin-Strategien mit minimaler Korrelation</li>
-      <li><strong>Institutional-Grade:</strong> Präzision, Skalierbarkeit und Risikomanagement wie bei Hedgefonds</li>
-      <li><strong>Modulare Flexibilität:</strong> Anpassbare Strategien (SMC, Volumen) für maximale Profitabilität</li>
-      <li><strong>Sicherheit:</strong> Exklusiv auf der regulierten Plattform Darwinex Zero</li>
+      <li>One-Pager & Visitenkarten-Websites: klar, schnell, auf den Punkt — ideal für Personen, Projekte und kleine Unternehmen</li>
+      <li>Mehrseitige Websites: mit Unterseiten, Menüs, Blog- bzw. News-Bereich und Kontaktmöglichkeiten</li>
+      <li>Online-Shops & E-Commerce: vom kleinen Verkaufsshop bis zum umfangreichen Produktkatalog</li>
+      <li>Komplexe Shop- & Marktplatz-Systeme: individuelle Funktionen, Mitgliederbereiche und Buchungs- oder Marktplatz-Logik</li>
+      <li>Responsives Design: perfekte Darstellung auf Handy, Tablet und Desktop</li>
+      <li>Günstig im Unterhalt: moderne Technologie, kostengünstiges Hosting und einfache Updates</li>
     </ul>
-    <p><strong>Warum investieren?</strong> Meine Strategie kombiniert technische Präzision, jahrelange Hingabe und KI-gestütztes algorithmisches Trading auf institutionellem Niveau.</p>
+    <p>Egal ob Neubau oder Relaunch einer bestehenden Seite — ich begleite dich von der Idee über das Design bis zum fertigen Livegang.</p>
+  </div>
+</section>
+
+<section class="bordered" id="coaching">
+  <div class="wrap prose">
+    <span class="sec-label label">08 — Fitness Coaching</span>
+    <h2 class="display">Bestform mit System.</h2>
+    <p>Als Coach im TRAINSANE-Team begleite ich Menschen zu ihrer Bestform — im Gym und auf der Wettkampfbühne. Personal Coaching & Personal Training (1:1 im Trainsane Gym), Online Coaching über die MyTRAINSANE App sowie Full-Service-Wettkampfvorbereitung im Bodybuilding. Ernährung nach dem TNT-Prinzip: kein Hungern, sondern cleveres Nährstoff-Timing.</p>
+    <a class="btn btn-ghost" href="fitness-coaching.html">Mehr zum Fitness Coaching →</a>
   </div>
 </section>
 
@@ -247,16 +269,20 @@
         <tr><td>Logo & Key Visual</td><td>ab CHF 1'000 pro Paket</td></tr>
         <tr><td>Kampagnenplanung</td><td>ab CHF 200 pro Stunde oder CHF 900–3'000 pro Konzept</td></tr>
         <tr><td>Kampagnenumsetzung</td><td>CHF 65–130 pro Stunde</td></tr>
+        <tr><td>Website-Erstellung</td><td>CHF 390 bis 2'500, je nach Umfang (One-Pager bis Shop-/Marktplatz-System)</td></tr>
       </tbody>
     </table>
-    <a class="btn btn-ghost" href="mailto:hallo@biankastettler.ch">Offerte anfragen →</a>
+    <a class="btn btn-ghost" href="mailto:bianka.stettler@gmail.com">Offerte anfragen →</a>
   </div>
 </section>
 <section class="cta" id="kontakt">
   <div class="wrap">
     <h2 class="display">Lust auf Projekte mit <em>Wirkung?</em></h2>
     <p>Ich bin offen für spannende Aufträge in Digital, Social Media, Branding, E-Commerce und mehr — let's talk.</p>
-    <a class="btn btn-primary" href="mailto:hallo@biankastettler.ch">E-Mail senden →</a>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary" href="mailto:bianka.stettler@gmail.com">E-Mail senden →</a>
+      <a class="btn btn-ghost" href="tel:+41799362300">+41 79 936 23 00</a>
+    </div>
   </div>
 </section>
 <footer>
@@ -265,6 +291,8 @@
       <div class="foot-col foot-logo">
         <img src="bilder/logo-weiss.png" alt="Bianka Stettler — Laut. Stark. Lautstark.">
         <p>Stettler Web Solutions<br>Oberfeldstrasse 3a, 3067 Boll</p>
+        <a href="tel:+41799362300">+41 79 936 23 00</a>
+        <a href="mailto:bianka.stettler@gmail.com">bianka.stettler@gmail.com</a>
       </div>
       <div class="foot-col">
         <span class="label">Navigation</span>
@@ -279,6 +307,8 @@
         <a href="https://www.linkedin.com/in/bianka-stettler/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://www.instagram.com/bibibunny2/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.tiktok.com/@bianka.stettler" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.facebook.com/bianka.marton/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/@biankastettler" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
     <div class="foot-bottom">

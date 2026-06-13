@@ -107,7 +107,8 @@
 
   /* ===== TICKER ===== */
   .ticker{background:var(--ink);color:var(--paper);overflow:hidden;border-bottom:1.5px solid var(--ink)}
-  .ticker-track{display:flex;gap:0;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content}
+  .ticker-track{display:flex;gap:0;white-space:nowrap;animation:scroll 30s linear infinite;width:max-content}
+  .ticker-seg{flex:0 0 auto}
   .ticker span{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:12px 0}
   .ticker em{color:var(--signal-bright);font-style:normal;padding:0 18px}
   @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -219,7 +220,20 @@
     </button>
     <ul class="nav-links">
       <li><a href="index.html#aktuell">Aktuell</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li>
+        <button type="button" onclick="this.parentElement.classList.toggle('open')">Services <span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="services.html#social-media">Social Media & Kampagnen</a>
+          <a href="services.html#kampagnen">Projektmanagement</a>
+          <a href="services.html#branding">Branding & Grafik</a>
+          <a href="services.html#events">Events & Guerilla Marketing</a>
+          <a href="services.html#ecommerce">Produktentwicklung & E-Commerce</a>
+          <a href="services.html#app-development">App Development</a>
+          <a href="services.html#webdevelopment">Web Development</a>
+          <a href="services.html#coaching">Fitness Coaching</a>
+          <a href="services.html#preise">Preise</a>
+        </div>
+      </li>
       <li>
         <button type="button" onclick="this.parentElement.classList.toggle('open')">Projekte <span class="caret"></span></button>
         <div class="dropdown">
@@ -254,6 +268,7 @@
         <a href="https://www.instagram.com/bibibunny2/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.tiktok.com/@bianka.stettler" target="_blank" rel="noopener">TikTok</a>
         <a href="https://www.facebook.com/bianka.marton/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/@biankastettler" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
     <div class="portrait-frame">
@@ -265,7 +280,8 @@
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>Laut + Stark = Lautstark<em>✦</em>Strategie<em>✦</em>Content<em>✦</em>Kampagnen<em>✦</em>Investigativ<em>✦</em>Wirkung statt Follower<em>✦</em>Laut + Stark = Lautstark<em>✦</em>Strategie<em>✦</em>Content<em>✦</em>Kampagnen<em>✦</em>Investigativ<em>✦</em>Wirkung statt Follower<em>✦</em></span>
+    <span class="ticker-seg">Laut + Stark = Lautstark<em>✦</em>Strategie<em>✦</em>Content<em>✦</em>Kampagnen<em>✦</em>Investigativ<em>✦</em>Wirkung statt Follower<em>✦</em></span>
+    <span class="ticker-seg" aria-hidden="true">Laut + Stark = Lautstark<em>✦</em>Strategie<em>✦</em>Content<em>✦</em>Kampagnen<em>✦</em>Investigativ<em>✦</em>Wirkung statt Follower<em>✦</em></span>
   </div>
 </div>
 
@@ -356,11 +372,19 @@
         </div>
       </a>
       <a class="proj-card" href="erfolgsstory-trainsane.html">
-        <div class="proj-thumb"><img src="bilder/trainsane.jpg" alt="TRAINSANE Event mit Dennis James" loading="lazy"></div>
+        <div class="proj-thumb"><img src="bilder/trainsane-karte.jpg" alt="TRAINSANE Community" loading="lazy"></div>
         <div class="proj-body">
           <span class="label">Brand · E-Commerce</span>
           <h3>TRAINSANE</h3>
           <p>Wie der Brand TRAINSANE eine Community belebte und sich international etablierte — inkl. Gründung der Schweizer Eigenmarke.</p>
+        </div>
+      </a>
+      <a class="proj-card" href="fitness-coaching.html">
+        <div class="proj-thumb"><img src="bilder/coaching-karte.jpg" alt="Fitness Coaching" loading="lazy"></div>
+        <div class="proj-body">
+          <span class="label">Coaching · laufend</span>
+          <h3>Fitness Coaching</h3>
+          <p>Personal Coaching, Online Coaching und Wettkampfvorbereitung im Bodybuilding — Bestform mit System.</p>
         </div>
       </a>
       <a class="proj-card" href="grafikprojekte.html">
@@ -379,7 +403,10 @@
   <div class="wrap">
     <h2 class="display">Bereit für Kampagnen mit <em>Haltung?</em></h2>
     <p>Dann lass uns was starten, das knallt — und bleibt.</p>
-    <a class="btn btn-primary" href="mailto:hallo@biankastettler.ch">E-Mail senden →</a>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary" href="mailto:bianka.stettler@gmail.com">E-Mail senden →</a>
+      <a class="btn btn-ghost" href="tel:+41799362300">+41 79 936 23 00</a>
+    </div>
   </div>
 </section>
 
@@ -389,6 +416,8 @@
       <div class="foot-col foot-logo">
         <img src="bilder/logo-weiss.png" alt="Bianka Stettler — Laut. Stark. Lautstark.">
         <p>Stettler Web Solutions<br>Oberfeldstrasse 3a, 3067 Boll</p>
+        <a href="tel:+41799362300">+41 79 936 23 00</a>
+        <a href="mailto:bianka.stettler@gmail.com">bianka.stettler@gmail.com</a>
       </div>
       <div class="foot-col">
         <span class="label">Navigation</span>
@@ -403,6 +432,8 @@
         <a href="https://www.linkedin.com/in/bianka-stettler/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://www.instagram.com/bibibunny2/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.tiktok.com/@bianka.stettler" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.facebook.com/bianka.marton/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.youtube.com/@biankastettler" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
     <div class="foot-bottom">
