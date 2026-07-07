@@ -53,6 +53,8 @@
   .prose li{padding:9px 0 9px 26px;position:relative;border-bottom:1px solid var(--line);color:rgba(22,19,16,.85)}
   .prose li::before{content:"→";position:absolute;left:0;color:var(--signal);font-family:var(--mono)}
   .figure{border:1.5px solid var(--ink);background:#fff;margin:28px 0}
+  .figure-sm{max-width:440px}
+  h3.sub[id]{scroll-margin-top:90px}
   .figure img{width:100%}
   .figure figcaption{padding:12px 16px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(22,19,16,.6);border-top:1.5px solid var(--ink)}
   .gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:28px 0}
@@ -169,10 +171,12 @@
   <div class="wrap prose">
     <span class="sec-label label">Angebote</span>
     <h2 class="display">Drei Wege zu deinem Ziel.</h2>
-    <h3 class="sub" style="margin-top:10px">Personal Coaching & Personal Training</h3>
+    <h3 class="sub" style="margin-top:10px" id="personal-coaching">Personal Coaching & Personal Training</h3>
     <p>Das Flaggschiff: persönliche 1:1-Betreuung — online oder vor Ort in der Region Bern. Personalisierte Trainingspläne abgestimmt auf deine Ziele, regelmässige Besprechungen inklusive Körperfettmessungen und laufende Online-Betreuung über die MyTrainsane App. Personal Trainings sind effizient, motivierend und individuell — trainiere mit einem Profi und profitiere von Tricks, die in keinem Lehrbuch stehen.</p>
-    <h3 class="sub">Online Coaching</h3>
-    <p>Volle Betreuung, ortsunabhängig: personalisierter Trainingsplan mit Periodisierung, massgeschneiderter Ernährungsplan nach TNT und 1:1-Betreuung mit Chat-Funktion über die MyTrainsane App PRO — wahlweise über 3, 6 oder 9 Monate.</p>
+    <div class="figure figure-sm"><img src="bilder/coaching-training.jpg" alt="Personal Training im TRAINSANE Gym" loading="lazy"><figcaption>Personal Training — Technik, Intensität und Motivation aus erster Hand</figcaption></div>
+    <h3 class="sub" id="online-coaching">Online Coaching</h3>
+    <p>Volle Betreuung, ortsunabhängig: personalisierter Trainingsplan mit Periodisierung, massgeschneiderter Ernährungsplan nach TNT und 1:1-Betreuung mit Chat-Funktion über die MyTrainsane App PRO — wahlweise über 3, 6 oder 9 Monate. Ergänzend gibt es E-Books sowie fertig ausgearbeitete Trainings- und Ernährungspläne — ideal für den Selbststart.</p>
+    <div class="figure figure-sm"><img src="bilder/coaching-online.jpg" alt="Online Coaching — trainiere wo du willst" loading="lazy"><figcaption>Online Coaching — dein Plan, dein Tempo, volle Betreuung über die App</figcaption></div>
     <h3 class="sub">Wettkampfvorbereitung</h3>
     <p>Full-Service von A bis Z für ambitionierte Athletinnen und Athleten: personalisierte Trainings- und Ernährungspläne, monatliche Check-Ups, Personal Trainings, Posing-Workshops, Hilfe bei Bikini-Auswahl & Styling bis hin zu Tanning und Makeup am Wettkampftag. Das Ziel ist klar: garantierte Bestform auf der Bühne.</p>
     <div class="quote">
