@@ -56,6 +56,9 @@
   .figure img{width:100%}
   .figure figcaption{padding:12px 16px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(22,19,16,.6);border-top:1.5px solid var(--ink)}
   .gallery{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:28px 0}
+  .puzzle{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:28px 0;align-items:start}
+  .puzzle-col{display:flex;flex-direction:column;gap:22px}
+  .puzzle .figure{margin:0}
   .gallery .figure{margin:0}
   .callout{border:1.5px solid var(--ink);background:#fff;padding:28px;margin:28px 0;box-shadow:8px 8px 0 var(--signal)}
   .callout .stamp{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;border:1.5px solid var(--signal);color:var(--signal);padding:4px 10px;margin-bottom:14px}
@@ -79,6 +82,7 @@
   :is(a,button):focus-visible{outline:2.5px solid var(--signal);outline-offset:3px}
   @media (max-width:900px){
     .gallery{grid-template-columns:1fr}
+    .puzzle{grid-template-columns:1fr}
     .nav-logo img{height:34px}
     .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:stretch;border-bottom:1.5px solid var(--ink);padding:8px 0 16px}
     .nav-links.open{display:flex}
@@ -168,10 +172,14 @@
   <div class="wrap">
     <span class="sec-label label">Print</span>
     <h2 class="display">Diverse grafische Arbeiten.</h2>
-    <div class="gallery">
+    <div class="puzzle">
       <figure class="figure"><img src="bilder/grafik-plakat-ausstellung.jpg" alt="Ausstellungsplakat Give Me Some Space im Strassenaushang" loading="lazy"><figcaption>Ausstellungsplakat «Give Me Some Space» — Galerie Kemptnertobel, für Künstler Benedikt Ambühl</figcaption></figure>
-      <figure class="figure"><img src="bilder/grafik-leaflet-trainsane.jpg" alt="Sales Leaflet B2B für TRAINSANE" loading="lazy"><figcaption>Sales Leaflet B2B für die Eigenmarke TRAINSANE® — Produktbroschüre im Falz-Format</figcaption></figure>
-      <figure class="figure"><img src="bilder/grafik-vernissage-einladung.jpg" alt="Vernissage-Einladung Give Me Some Space" loading="lazy"><figcaption>Vernissage-Einladung «Give Me Some Space» — Print-Einladung zur Ausstellung</figcaption></figure>
+      <div class="puzzle-col">
+        <figure class="figure"><img src="bilder/grafik-vernissage-einladung.jpg" alt="Vernissage-Einladung Give Me Some Space" loading="lazy"><figcaption>Vernissage-Einladung «Give Me Some Space» — Print-Einladung zur Ausstellung</figcaption></figure>
+        <figure class="figure"><img src="bilder/grafik-leaflet-trainsane.jpg" alt="Sales Leaflet B2B für TRAINSANE" loading="lazy"><figcaption>Sales Leaflet B2B für die Eigenmarke TRAINSANE® — Produktbroschüre im Falz-Format</figcaption></figure>
+      </div>
+    </div>
+    <div class="gallery">
       <figure class="figure"><img src="bilder/grafik-plakate-party.jpg" alt="Party-Plakatserie Bar Excellence" loading="lazy"><figcaption>Party-Plakatserie Bar Excellence, Bern — Eventdesign über mehrere Jahre</figcaption></figure>
       <figure class="figure"><img src="bilder/grafik-plakate-party-rahmen.jpg" alt="Gerahmte Event-Plakate Bar Excellence" loading="lazy"><figcaption>Event-Plakate Bar Excellence — von Tropical bis Neon, jedes Event mit eigenem Look</figcaption></figure>
       <figure class="figure"><img src="bilder/grafik-megabanner.jpg" alt="Megabanner Im Takt der Natur" loading="lazy"><figcaption>Megabanner «Im Takt der Natur» — Grossformat für ein Landwirtschaftsprojekt</figcaption></figure>
