@@ -36,6 +36,12 @@
   .nav-links>li{position:relative}
   .nav-links a,.nav-links button{font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;padding:10px 12px;background:none;border:none;cursor:pointer;color:var(--ink);display:inline-flex;align-items:center;gap:6px}
   .nav-links a:hover,.nav-links button:hover{color:var(--signal)}
+  .nav-top{font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;padding:10px 4px 10px 12px;display:inline-flex;align-items:center;color:var(--ink)}
+  .nav-top:hover{color:var(--signal)}
+  .caret-btn{background:none;border:none;cursor:pointer;padding:10px 12px 10px 4px;display:inline-flex;align-items:center;color:var(--ink)}
+  .caret-btn:hover{color:var(--signal)}
+  .nav-links>li:hover .caret-btn{color:var(--signal)}
+
   .caret{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
   .dropdown{position:absolute;top:calc(100% + 10px);left:0;min-width:300px;background:#fff;color:var(--ink);border:1.5px solid var(--ink);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;box-shadow:6px 6px 0 var(--signal)}
   .nav-links li:hover .dropdown,.nav-links li:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
@@ -112,7 +118,8 @@
     <ul class="nav-links">
       <li><a href="index.html#aktuell">Aktuell</a></li>
       <li>
-        <button type="button" onclick="this.parentElement.classList.toggle('open')">Services <span class="caret"></span></button>
+        <a href="services.html" class="nav-top">Services</a>
+        <button type="button" class="caret-btn" aria-label="Untermenü" onclick="this.closest('li').classList.toggle('open')"><span class="caret"></span></button>
         <div class="dropdown">
           <a href="services.html#social-media">Social Media & Kampagnen</a>
           <a href="services.html#kampagnen">Projektmanagement</a>
@@ -126,7 +133,8 @@
         </div>
       </li>
       <li>
-        <button type="button" onclick="this.parentElement.classList.toggle('open')">Politik <span class="caret"></span></button>
+        <a href="index.html#projekte" class="nav-top">Politik</a>
+        <button type="button" class="caret-btn" aria-label="Untermenü" onclick="this.closest('li').classList.toggle('open')"><span class="caret"></span></button>
         <div class="dropdown">
           <a href="e-id-referendum.html">E-ID Referendum 2025</a>
           <a href="swissmedic-coop-vitality.html">Swissmedic / Coop Vitality 2026</a>
@@ -134,7 +142,8 @@
         </div>
       </li>
       <li>
-        <button type="button" onclick="this.parentElement.classList.toggle('open')">Projekte <span class="caret"></span></button>
+        <a href="index.html#marketing" class="nav-top">Projekte</a>
+        <button type="button" class="caret-btn" aria-label="Untermenü" onclick="this.closest('li').classList.toggle('open')"><span class="caret"></span></button>
         <div class="dropdown">
           <a href="grafikprojekte.html">Grafikprojekte</a>
           <a href="mytrainsane-app.html">MyTRAINSANE App</a>
@@ -143,7 +152,7 @@
         </div>
       </li>
       <li><a href="fitness-coaching.html">Fitness Coaching</a></li>
-      <li><a class="nav-cta" href="index.html#kontakt">Kontakt</a></li>
+      <li><a class="nav-cta" href="#kontakt" >Kontakt</a></li>
     </ul>
   </div>
 </header>
